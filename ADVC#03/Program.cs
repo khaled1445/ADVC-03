@@ -16,6 +16,9 @@ namespace ADVC_03
             Console.WriteLine("Count: " + grades.Count);
             Console.WriteLine("First grade: " + grades[0]);
             Console.WriteLine("Last grade: " + grades[grades.Count - 1]);
+            // 3.Sort the grades ascending, then print
+            grades.Sort();
+            Console.WriteLine($"Grades (ascending): {string.Join(", ", grades)}");
             
 
             #endregion
