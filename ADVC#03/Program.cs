@@ -132,7 +132,9 @@ namespace ADVC_03
 
             //1.Print the queue contents and Count
             Console.WriteLine("All files: " + string.Join(", " , printSimQueue));
+            Console.WriteLine();
             //2.Use Peek to see which document will print next(without removing)
+            Console.WriteLine("next file is: " + printSimQueue.Peek());
             //3.Process the queue: Dequeue each document and print "Printing: [name]"
             //4.Try TryDequeue on the now-empty queue — what happens?
 
