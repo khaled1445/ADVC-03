@@ -80,6 +80,11 @@ namespace ADVC_03
                 { "ali", "111-111-1111" }
             };
             //2.Add a new contact using [] syntax (add or update)
+            phoneBook.Add("mahmoud", "222-222-2222");
+            foreach (KeyValuePair<string, string> entry in phoneBook)
+            {
+                Console.WriteLine($"Name: {entry.Key}, Phone: {entry.Value}");
+            }
             //3.Try adding a duplicate using .Add() — catch the exception and print the error
             //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
             //5.Search for a contact that doesn’t exist
