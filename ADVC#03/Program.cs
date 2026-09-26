@@ -86,6 +86,14 @@ namespace ADVC_03
                 Console.WriteLine($"Name: {entry.Key}, Phone: {entry.Value}");
             }
             //3.Try adding a duplicate using .Add() — catch the exception and print the error
+            try
+            {
+                phoneBook.Add("khaled", "999-999-9999");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
             //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
             //5.Search for a contact that doesn’t exist
             //6.Get a contact with a fallback of "Not Found"
