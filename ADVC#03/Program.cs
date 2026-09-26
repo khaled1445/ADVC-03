@@ -58,7 +58,12 @@ namespace ADVC_03
             //5.Safely get the player with score 999
             Console.WriteLine("Player with score 999: " + (leaderboard.TryGetValue(999, out string player999) ? player999 : "Not found"));
             //6.Remove the player with score 200 and print the updated list
-
+            leaderboard.Remove(200);
+            Console.WriteLine("Updated leaderboard:");
+            foreach (KeyValuePair<int, string> entry in leaderboard)
+            {
+                Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
+            }
             #endregion
         }
     }
