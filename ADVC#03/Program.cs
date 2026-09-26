@@ -163,6 +163,14 @@ namespace ADVC_03
             //2.Use Peek to see the current page(top of stack)
             Console.WriteLine(browserHistory.Peek());
             //3.Press "back" 3 times using Pop — print each page you leave
+            string firstPop,secondPop, thirdPop;
+            browserHistory.TryPop(out firstPop);
+            browserHistory.TryPop(out secondPop);
+            browserHistory.TryPop(out thirdPop);
+            Console.WriteLine($"fisrt pop: {firstPop}");
+            Console.WriteLine($"second pop: {secondPop}");
+            Console.WriteLine($"third pop: {thirdPop}");
+
             //4.Print the current page after going back
             //5.Try TryPop on an empty stack — what happens?
 
