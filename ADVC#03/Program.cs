@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Reflection;
 using System.Reflection.Metadata;
+using System.Timers;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -122,29 +123,44 @@ namespace ADVC_03
             #endregion
 
             #region Exercise 5: Print Queue Simulator (Simulate a printer queue)
-            //Create a Queue<string> and enqueue 5 documents: "Report.pdf", "Invoice.pdf", "Letter.docx", "Resume.pdf", "Photo.jpg"
-            Queue<string> printSimQueue = new Queue<string>();
-            printSimQueue.Enqueue("Report.pdf");
-            printSimQueue.Enqueue("Invoice.pdf");
-            printSimQueue.Enqueue("Letter.docx");
-            printSimQueue.Enqueue("Resume.pdf");
-            printSimQueue.Enqueue("Photo.jpg");
+            ////Create a Queue<string> and enqueue 5 documents: "Report.pdf", "Invoice.pdf", "Letter.docx", "Resume.pdf", "Photo.jpg"
+            //Queue<string> printSimQueue = new Queue<string>();
+            //printSimQueue.Enqueue("Report.pdf");
+            //printSimQueue.Enqueue("Invoice.pdf");
+            //printSimQueue.Enqueue("Letter.docx");
+            //printSimQueue.Enqueue("Resume.pdf");
+            //printSimQueue.Enqueue("Photo.jpg");
 
-            //1.Print the queue contents and Count
-            Console.WriteLine("All files: " + string.Join(", " , printSimQueue));
+            ////1.Print the queue contents and Count
+            //Console.WriteLine("All files: " + string.Join(", " , printSimQueue));
+            //Console.WriteLine();
+            ////2.Use Peek to see which document will print next(without removing)
+            //Console.WriteLine("next file is: " + printSimQueue.Peek());
+            //Console.WriteLine();
+            ////3.Process the queue: Dequeue each document and print "Printing: [name]"
+            //printSimQueue.Dequeue();
+            //Console.WriteLine("next file after dequeue is: " + printSimQueue.Peek());
+            //Console.WriteLine();
+            ////4.Try TryDequeue on the now-empty queue — what happens?
+            //Queue<string> queue02 = new Queue<string>();
+            ////queue02.Dequeue(); // thwos an exception 
+            //// we use trydequeueu instead
+            //Console.WriteLine( queue02.TryDequeue(out string dequeuedElement) ? dequeuedElement : "Queue is empty" );
+            #endregion
+
+            #region Exercise 6: Browser History (Undo)
+            //Simulate browser back / forward
+            //Create a Stack<string> for browser history
+            Stack<string> browserHistory = new Stack<string>();
+            //1.Push 5 URLs: "google.com", "github.com", "stackoverflow.com", "youtube.com", "claude.ai"
+            browserHistory.Push("\"google.com\", \"github.com\", \"stackoverflow.com\", \"youtube.com\", \"claude.ai\"");
+            Console.WriteLine(string.Join(", " , browserHistory));
             Console.WriteLine();
-            //2.Use Peek to see which document will print next(without removing)
-            Console.WriteLine("next file is: " + printSimQueue.Peek());
-            Console.WriteLine();
-            //3.Process the queue: Dequeue each document and print "Printing: [name]"
-            printSimQueue.Dequeue();
-            Console.WriteLine("next file after dequeue is: " + printSimQueue.Peek());
-            Console.WriteLine();
-            //4.Try TryDequeue on the now-empty queue — what happens?
-            Queue<string> queue02 = new Queue<string>();
-            //queue02.Dequeue(); // thwos an exception 
-            // we use trydequeueu instead
-            Console.WriteLine( queue02.TryDequeue(out string dequeuedElement) ? dequeuedElement : "Queue is empty" );
+            //2.Use Peek to see the current page(top of stack)
+            //3.Press "back" 3 times using Pop — print each page you leave
+            //4.Print the current page after going back
+            //5.Try TryPop on an empty stack — what happens?
+
             #endregion
         }
     }
