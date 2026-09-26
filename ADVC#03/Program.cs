@@ -34,7 +34,23 @@ namespace ADVC_03
                 gradeStrings.Add($"Grade: {grade}");
             }
             Console.WriteLine($"New List: [{string.Join(", ", gradeStrings)}]");
-            
+            #endregion
+
+            #region Exercise 2: Leaderboard
+            //Create a leaderboard that automatically sorts players by score.
+            //1.Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+            SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>()
+            {
+                [500] = "Ahmed",
+                [200] = "Sara",
+                [800] = "Ali",
+                [350] = "Mona"
+            };
+            //2.Print all entries(they should be sorted by score automatically)
+            //3.Access the first key and first value
+            //4.Check if score 500 exists
+            //5.Safely get the player with score 999
+            //6.Remove the player with score 200 and print the updated list
 
             #endregion
         }
