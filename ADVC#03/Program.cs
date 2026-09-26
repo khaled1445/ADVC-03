@@ -95,7 +95,12 @@ namespace ADVC_03
                 Console.WriteLine($"Error: {ex.Message}");
             }
             //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
+            
+            bool added = phoneBook.TryAdd("khaled", "010-9999-9999");
+            Console.WriteLine($"TryAdd() duplicate succeeded? {added}");
+            
             //5.Search for a contact that doesn’t exist
+
             //6.Get a contact with a fallback of "Not Found"
             //7.Print all Keys on one line, then all Values on another line
 
