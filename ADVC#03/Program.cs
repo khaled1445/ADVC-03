@@ -1,4 +1,8 @@
 ﻿using Microsoft.VisualBasic;
+using System.Collections;
+using System.Drawing;
+using System.Reflection;
+using System.Reflection.Metadata;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -70,50 +74,67 @@ namespace ADVC_03
             #endregion
 
             #region Exercise 3: Phone Book
-            //Build a phone book application.
-            //1.Create a Collection with 4 contacts(name → phone number)
-            Dictionary<string, string> phoneBook = new Dictionary<string, string>()
-            {
-                { "khaled", "123-456-7890" },
-                { "ahmed", "098-765-4321" },
-                { "sayed", "555-555-5555" },
-                { "ali", "111-111-1111" }
-            };
-            Console.WriteLine();
-            //2.Add a new contact using [] syntax (add or update)
-            phoneBook.Add("mahmoud", "222-222-2222");
-            foreach (KeyValuePair<string, string> entry in phoneBook)
-            {
-                Console.WriteLine($"Name: {entry.Key}, Phone: {entry.Value}");
-            }
-            Console.WriteLine();
-            //3.Try adding a duplicate using .Add() — catch the exception and print the error
-            try
-            {
-                phoneBook.Add("khaled", "999-999-9999");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            Console.WriteLine();
-            //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
-            
-            bool added = phoneBook.TryAdd("khaled", "010-9999-9999");
-            Console.WriteLine($"TryAdd() duplicate succeeded? {added}");
-            Console.WriteLine();
-            //5.Search for a contact that doesn’t exist
-            bool exists = phoneBook.ContainsKey("khaled");
-            Console.WriteLine($"Contact khaled? {exists}");
-            Console.WriteLine();
-            //6.Get a contact with a fallback of "Not Found"
-            Console.WriteLine("Phone number for khaled: " + (phoneBook.TryGetValue("khaled", out string phone) ? phone : "Not Found"));
-            Console.WriteLine("Phone number for mira: " + (phoneBook.TryGetValue("mira", out string number) ? number : "Not Found"));
-            Console.WriteLine();
-            //7.Print all Keys on one line, then all Values on another line
-            Console.WriteLine("All names: " + string.Join(", ", phoneBook.Keys));
-            Console.WriteLine("All numbers: " + string.Join(", ", phoneBook.Values));
+            ////Build a phone book application.
+            ////1.Create a Collection with 4 contacts(name → phone number)
+            //Dictionary<string, string> phoneBook = new Dictionary<string, string>()
+            //{
+            //    { "khaled", "123-456-7890" },
+            //    { "ahmed", "098-765-4321" },
+            //    { "sayed", "555-555-5555" },
+            //    { "ali", "111-111-1111" }
+            //};
+            //Console.WriteLine();
+            ////2.Add a new contact using [] syntax (add or update)
+            //phoneBook.Add("mahmoud", "222-222-2222");
+            //foreach (KeyValuePair<string, string> entry in phoneBook)
+            //{
+            //    Console.WriteLine($"Name: {entry.Key}, Phone: {entry.Value}");
+            //}
+            //Console.WriteLine();
+            ////3.Try adding a duplicate using .Add() — catch the exception and print the error
+            //try
+            //{
+            //    phoneBook.Add("khaled", "999-999-9999");
+            //}
+            //catch (ArgumentException ex)
+            //{
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //}
+            //Console.WriteLine();
+            ////4.Try adding a duplicate using .TryAdd() — print whether it succeeded
 
+            //bool added = phoneBook.TryAdd("khaled", "010-9999-9999");
+            //Console.WriteLine($"TryAdd() duplicate succeeded? {added}");
+            //Console.WriteLine();
+            ////5.Search for a contact that doesn’t exist
+            //bool exists = phoneBook.ContainsKey("khaled");
+            //Console.WriteLine($"Contact khaled? {exists}");
+            //Console.WriteLine();
+            ////6.Get a contact with a fallback of "Not Found"
+            //Console.WriteLine("Phone number for khaled: " + (phoneBook.TryGetValue("khaled", out string phone) ? phone : "Not Found"));
+            //Console.WriteLine("Phone number for mira: " + (phoneBook.TryGetValue("mira", out string number) ? number : "Not Found"));
+            //Console.WriteLine();
+            ////7.Print all Keys on one line, then all Values on another line
+            //Console.WriteLine("All names: " + string.Join(", ", phoneBook.Keys));
+            //Console.WriteLine("All numbers: " + string.Join(", ", phoneBook.Values));
+
+
+            #endregion
+
+            #region Exercise 5: Print Queue Simulator (Simulate a printer queue)
+            //Create a Queue<string> and enqueue 5 documents: "Report.pdf", "Invoice.pdf", "Letter.docx", "Resume.pdf", "Photo.jpg"
+            Queue<string> printSimQueue = new Queue<string>();
+            printSimQueue.Enqueue("Report.pdf");
+            printSimQueue.Enqueue("Invoice.pdf");
+            printSimQueue.Enqueue("Letter.docx");
+            printSimQueue.Enqueue("Resume.pdf");
+            printSimQueue.Enqueue("Photo.jpg");
+
+            //1.Print the queue contents and Count
+            Console.WriteLine("All files: " + string.Join(", " , printSimQueue));
+            //2.Use Peek to see which document will print next(without removing)
+            //3.Process the queue: Dequeue each document and print "Printing: [name]"
+            //4.Try TryDequeue on the now-empty queue — what happens?
 
             #endregion
         }
