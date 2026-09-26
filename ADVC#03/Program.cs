@@ -10,30 +10,30 @@ namespace ADVC_03
             // Create a program that manages student grades using One Of Collections
 
             // 1.Create a Collection with these grades: 85, 92, 78, 95, 88, 70, 100, 65
-            List<int> grades = new List<int> { 85, 92, 78, 95, 88, 70, 100, 65 };
-            // 2.Print the collection, Count, first and last grade
-            Console.WriteLine("Grades: " + string.Join(", ", grades));
-            Console.WriteLine("Count: " + grades.Count);
-            Console.WriteLine("First grade: " + grades[0]);
-            Console.WriteLine("Last grade: " + grades[grades.Count - 1]);
-            // 3.Sort the grades ascending, then print
-            grades.Sort();
-            Console.WriteLine($"Grades (ascending): {string.Join(", ", grades)}");
-            // 4.Get the first grade above 90
-            Console.WriteLine($"The First grade above 90 is: {grades.Find(n => n > 90)} ");
-            // 5.Get all grades below 75(failing grades)
-            Console.WriteLine($"Failing grades: {string.Join(", ", grades.FindAll(n => n < 75))}");
-            // 6.Remove all failing grades(below 75)
-            grades.RemoveAll(n => n < 75);
-            // 7.Check if any grade equals 100
-            Console.WriteLine($"Contains grade 100: {grades.Contains(100)}");
-            // 8.Create a List<string> where each grade becomes "Grade: X"
-            List<string> gradeStrings = new List<string>();
-            foreach (int grade in grades) 
-            {
-                gradeStrings.Add($"Grade: {grade}");
-            }
-            Console.WriteLine($"New List: [{string.Join(", ", gradeStrings)}]");
+            //List<int> grades = new List<int> { 85, 92, 78, 95, 88, 70, 100, 65 };
+            //// 2.Print the collection, Count, first and last grade
+            //Console.WriteLine("Grades: " + string.Join(", ", grades));
+            //Console.WriteLine("Count: " + grades.Count);
+            //Console.WriteLine("First grade: " + grades[0]);
+            //Console.WriteLine("Last grade: " + grades[grades.Count - 1]);
+            //// 3.Sort the grades ascending, then print
+            //grades.Sort();
+            //Console.WriteLine($"Grades (ascending): {string.Join(", ", grades)}");
+            //// 4.Get the first grade above 90
+            //Console.WriteLine($"The First grade above 90 is: {grades.Find(n => n > 90)} ");
+            //// 5.Get all grades below 75(failing grades)
+            //Console.WriteLine($"Failing grades: {string.Join(", ", grades.FindAll(n => n < 75))}");
+            //// 6.Remove all failing grades(below 75)
+            //grades.RemoveAll(n => n < 75);
+            //// 7.Check if any grade equals 100
+            //Console.WriteLine($"Contains grade 100: {grades.Contains(100)}");
+            //// 8.Create a List<string> where each grade becomes "Grade: X"
+            //List<string> gradeStrings = new List<string>();
+            //foreach (int grade in grades) 
+            //{
+            //    gradeStrings.Add($"Grade: {grade}");
+            //}
+            //Console.WriteLine($"New List: [{string.Join(", ", gradeStrings)}]");
             #endregion
 
             #region Exercise 2: Leaderboard
@@ -47,6 +47,10 @@ namespace ADVC_03
                 [350] = "Mona"
             };
             //2.Print all entries(they should be sorted by score automatically)
+            foreach (KeyValuePair<int, string> entry in leaderboard) 
+            {
+                Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
+            }
             //3.Access the first key and first value
             //4.Check if score 500 exists
             //5.Safely get the player with score 999
