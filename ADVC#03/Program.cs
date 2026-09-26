@@ -1,4 +1,7 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using Microsoft.VisualBasic;
+using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ADVC_03
 {
@@ -37,33 +40,52 @@ namespace ADVC_03
             #endregion
 
             #region Exercise 2: Leaderboard
-            //Create a leaderboard that automatically sorts players by score.
-            //1.Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
-            SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>()
+            ////Create a leaderboard that automatically sorts players by score.
+            ////1.Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+            //SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>()
+            //{
+            //    [500] = "Ahmed",
+            //    [200] = "Sara",
+            //    [800] = "Ali",
+            //    [350] = "Mona"
+            //};
+            ////2.Print all entries(they should be sorted by score automatically)
+            //foreach (KeyValuePair<int, string> entry in leaderboard) 
+            //{
+            //    Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
+            //}
+            ////3.Access the first key and first value
+            //Console.WriteLine($"First score: {leaderboard.Keys.First()}, First player: {leaderboard.Values.First()}");
+            ////4.Check if score 500 exists
+            //Console.WriteLine($"Contains score 500: {leaderboard.ContainsKey(500)}");
+            ////5.Safely get the player with score 999
+            //Console.WriteLine("Player with score 999: " + (leaderboard.TryGetValue(999, out string player999) ? player999 : "Not found"));
+            ////6.Remove the player with score 200 and print the updated list
+            //leaderboard.Remove(200);
+            //Console.WriteLine("Updated leaderboard:");
+            //foreach (KeyValuePair<int, string> entry in leaderboard)
+            //{
+            //    Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
+            //}
+            #endregion
+
+            #region Exercise 3: Phone Book
+            //Build a phone book application.
+            //1.Create a Collection with 4 contacts(name → phone number)
+            Dictionary<string, string> phoneBook = new Dictionary<string, string>()
             {
-                [500] = "Ahmed",
-                [200] = "Sara",
-                [800] = "Ali",
-                [350] = "Mona"
+                { "khaled", "123-456-7890" },
+                { "ahmed", "098-765-4321" },
+                { "sayed", "555-555-5555" },
+                { "ali", "111-111-1111" }
             };
-            //2.Print all entries(they should be sorted by score automatically)
-            foreach (KeyValuePair<int, string> entry in leaderboard) 
-            {
-                Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
-            }
-            //3.Access the first key and first value
-            Console.WriteLine($"First score: {leaderboard.Keys.First()}, First player: {leaderboard.Values.First()}");
-            //4.Check if score 500 exists
-            Console.WriteLine($"Contains score 500: {leaderboard.ContainsKey(500)}");
-            //5.Safely get the player with score 999
-            Console.WriteLine("Player with score 999: " + (leaderboard.TryGetValue(999, out string player999) ? player999 : "Not found"));
-            //6.Remove the player with score 200 and print the updated list
-            leaderboard.Remove(200);
-            Console.WriteLine("Updated leaderboard:");
-            foreach (KeyValuePair<int, string> entry in leaderboard)
-            {
-                Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
-            }
+            //2.Add a new contact using [] syntax (add or update)
+            //3.Try adding a duplicate using .Add() — catch the exception and print the error
+            //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
+            //5.Search for a contact that doesn’t exist
+            //6.Get a contact with a fallback of "Not Found"
+            //7.Print all Keys on one line, then all Values on another line
+
             #endregion
         }
     }
