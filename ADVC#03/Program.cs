@@ -1,10 +1,19 @@
-﻿namespace ADVC_03
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace ADVC_03
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            #region Exercise 1: Student Grade Manager
+            // Create a program that manages student grades using One Of Collections
+
+            // 1.Create a Collection with these grades: 85, 92, 78, 95, 88, 70, 100, 65
+            List<int> grades = new List<int> { 85, 92, 78, 95, 88, 70, 100, 65 };
+            
+
+            #endregion
         }
     }
 }
