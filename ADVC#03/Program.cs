@@ -153,10 +153,15 @@ namespace ADVC_03
             //Create a Stack<string> for browser history
             Stack<string> browserHistory = new Stack<string>();
             //1.Push 5 URLs: "google.com", "github.com", "stackoverflow.com", "youtube.com", "claude.ai"
-            browserHistory.Push("\"google.com\", \"github.com\", \"stackoverflow.com\", \"youtube.com\", \"claude.ai\"");
+            browserHistory.Push("google.com");
+            browserHistory.Push("github.com");
+            browserHistory.Push("stackoverflow.com");
+            browserHistory.Push("youtube.com");
+            browserHistory.Push("claude.ai");
             Console.WriteLine(string.Join(", " , browserHistory));
             Console.WriteLine();
             //2.Use Peek to see the current page(top of stack)
+            Console.WriteLine(browserHistory.Peek());
             //3.Press "back" 3 times using Pop — print each page you leave
             //4.Print the current page after going back
             //5.Try TryPop on an empty stack — what happens?
