@@ -21,6 +21,8 @@ namespace ADVC_03
             Console.WriteLine($"Grades (ascending): {string.Join(", ", grades)}");
             // 4.Get the first grade above 90
             Console.WriteLine($"The First grade above 90 is: {grades.Find(n => n > 90)} ");
+            // 5.Get all grades below 75(failing grades)
+            Console.WriteLine($"Failing grades: {string.Join(", ", grades.FindAll(n => n < 75))}");
             
 
             #endregion
