@@ -141,7 +141,10 @@ namespace ADVC_03
             Console.WriteLine("next file after dequeue is: " + printSimQueue.Peek());
             Console.WriteLine();
             //4.Try TryDequeue on the now-empty queue — what happens?
-
+            Queue<string> queue02 = new Queue<string>();
+            //queue02.Dequeue(); // thwos an exception 
+            // we use trydequeueu instead
+            Console.WriteLine( queue02.TryDequeue(out string dequeuedElement) ? dequeuedElement : "Queue is empty" );
             #endregion
         }
     }
