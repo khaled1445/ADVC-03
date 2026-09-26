@@ -135,7 +135,11 @@ namespace ADVC_03
             Console.WriteLine();
             //2.Use Peek to see which document will print next(without removing)
             Console.WriteLine("next file is: " + printSimQueue.Peek());
+            Console.WriteLine();
             //3.Process the queue: Dequeue each document and print "Printing: [name]"
+            printSimQueue.Dequeue();
+            Console.WriteLine("next file after dequeue is: " + printSimQueue.Peek());
+            Console.WriteLine();
             //4.Try TryDequeue on the now-empty queue — what happens?
 
             #endregion
