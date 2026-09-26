@@ -19,6 +19,8 @@ namespace ADVC_03
             // 3.Sort the grades ascending, then print
             grades.Sort();
             Console.WriteLine($"Grades (ascending): {string.Join(", ", grades)}");
+            // 4.Get the first grade above 90
+            Console.WriteLine($"The First grade above 90 is: {grades.Find(n => n > 90)} ");
             
 
             #endregion
