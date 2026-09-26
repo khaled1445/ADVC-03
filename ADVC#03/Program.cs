@@ -27,6 +27,13 @@ namespace ADVC_03
             grades.RemoveAll(n => n < 75);
             // 7.Check if any grade equals 100
             Console.WriteLine($"Contains grade 100: {grades.Contains(100)}");
+            // 8.Create a List<string> where each grade becomes "Grade: X"
+            List<string> gradeStrings = new List<string>();
+            foreach (int grade in grades) 
+            {
+                gradeStrings.Add($"Grade: {grade}");
+            }
+            Console.WriteLine($"New List: [{string.Join(", ", gradeStrings)}]");
             
 
             #endregion
