@@ -79,12 +79,14 @@ namespace ADVC_03
                 { "sayed", "555-555-5555" },
                 { "ali", "111-111-1111" }
             };
+            Console.WriteLine();
             //2.Add a new contact using [] syntax (add or update)
             phoneBook.Add("mahmoud", "222-222-2222");
             foreach (KeyValuePair<string, string> entry in phoneBook)
             {
                 Console.WriteLine($"Name: {entry.Key}, Phone: {entry.Value}");
             }
+            Console.WriteLine();
             //3.Try adding a duplicate using .Add() — catch the exception and print the error
             try
             {
@@ -94,18 +96,23 @@ namespace ADVC_03
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
+            Console.WriteLine();
             //4.Try adding a duplicate using .TryAdd() — print whether it succeeded
             
             bool added = phoneBook.TryAdd("khaled", "010-9999-9999");
             Console.WriteLine($"TryAdd() duplicate succeeded? {added}");
-            
+            Console.WriteLine();
             //5.Search for a contact that doesn’t exist
             bool exists = phoneBook.ContainsKey("khaled");
             Console.WriteLine($"Contact khaled? {exists}");
+            Console.WriteLine();
             //6.Get a contact with a fallback of "Not Found"
             Console.WriteLine("Phone number for khaled: " + (phoneBook.TryGetValue("khaled", out string phone) ? phone : "Not Found"));
             Console.WriteLine("Phone number for mira: " + (phoneBook.TryGetValue("mira", out string number) ? number : "Not Found"));
+            Console.WriteLine();
             //7.Print all Keys on one line, then all Values on another line
+            Console.WriteLine("All names: " + string.Join(", ", phoneBook.Keys));
+            Console.WriteLine("All numbers: " + string.Join(", ", phoneBook.Values));
 
 
             #endregion
