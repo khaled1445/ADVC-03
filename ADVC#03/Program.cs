@@ -52,6 +52,7 @@ namespace ADVC_03
                 Console.WriteLine($"Score: {entry.Key}, Player: {entry.Value}");
             }
             //3.Access the first key and first value
+            Console.WriteLine($"First score: {leaderboard.Keys.First()}, First player: {leaderboard.Values.First()}");
             //4.Check if score 500 exists
             //5.Safely get the player with score 999
             //6.Remove the player with score 200 and print the updated list
