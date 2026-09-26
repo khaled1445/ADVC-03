@@ -103,7 +103,10 @@ namespace ADVC_03
             bool exists = phoneBook.ContainsKey("khaled");
             Console.WriteLine($"Contact khaled? {exists}");
             //6.Get a contact with a fallback of "Not Found"
+            Console.WriteLine("Phone number for khaled: " + (phoneBook.TryGetValue("khaled", out string phone) ? phone : "Not Found"));
+            Console.WriteLine("Phone number for mira: " + (phoneBook.TryGetValue("mira", out string number) ? number : "Not Found"));
             //7.Print all Keys on one line, then all Values on another line
+
 
             #endregion
         }
