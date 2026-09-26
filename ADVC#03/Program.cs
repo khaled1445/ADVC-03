@@ -100,7 +100,8 @@ namespace ADVC_03
             Console.WriteLine($"TryAdd() duplicate succeeded? {added}");
             
             //5.Search for a contact that doesn’t exist
-
+            bool exists = phoneBook.ContainsKey("khaled");
+            Console.WriteLine($"Contact khaled? {exists}");
             //6.Get a contact with a fallback of "Not Found"
             //7.Print all Keys on one line, then all Values on another line
 
